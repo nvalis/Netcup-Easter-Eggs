@@ -25,8 +25,8 @@ def scrape_url(url):
     urls = set()
     for url in filter(interesting_url, hrefs):
         parsed_url = urllib.parse.urlparse(url)
-        if parsed_url.path != "/": # treat / separately
-        	urls.add(parsed_url.path.rstrip("/"))
+        if parsed_url.path != "/":  # treat / separately
+            urls.add(parsed_url.path.rstrip("/"))
     return urls
 
 
