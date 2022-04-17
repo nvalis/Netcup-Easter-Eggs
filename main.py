@@ -12,9 +12,9 @@ for i, u in enumerate(urls):
         egg = response_json["eggs"][0]
         if egg["product_id"] not in prod_ids:
             prod_ids.append(egg["product_id"])
-            print(f"-> {html.unescape(egg['title'])} für {html.unescape(egg['price'])}")
+            print(f"-> {html.unescape(egg['title'])} ({html.unescape(egg['price'])})")
             print(f"      https://www.netcup.de{u}")
             print(
                 f"      https://www.netcup.de/bestellen/produkt.php?produkt={egg['product_id']}&hiddenkey={egg['product_key']}"
             )
-print("Done.")
+print(f"Done. {len(prod_ids)} eggs on {len(urls)} URLs found")
